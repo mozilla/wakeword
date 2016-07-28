@@ -283,7 +283,7 @@ module.exports = {
     if (!seg) {
       return false;
     }
-
+    console.log(this.decoder.getLogmath().exp(seg.prob));
     return this.decoder.getLogmath().exp(seg.prob) >= threshold;
   },
 
