@@ -55,6 +55,8 @@ module.exports = {
    */
   state: stateEnum.STOPPED,
 
+  lastScore: null,
+
   // Private properties.
   sphinxConfig: null,
   lastWords: [],
@@ -283,7 +285,7 @@ module.exports = {
     if (!seg) {
       return false;
     }
-    console.log(this.decoder.getLogmath().exp(seg.prob));
+    this.lastScore = this.decoder.getLogmath().exp(seg.prob);
     return this.decoder.getLogmath().exp(seg.prob) >= threshold;
   },
 
