@@ -286,6 +286,7 @@ module.exports = {
       return false;
     }
     this.lastScore = this.decoder.getLogmath().exp(seg.prob);
+    process.stdout.write("Kws Score:" + this.lastScore);
     return this.decoder.getLogmath().exp(seg.prob) >= threshold;
   },
 
